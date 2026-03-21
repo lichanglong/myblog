@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply m-0 bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100;
+}
+
+.markdown-body h1 {
+  @apply mb-4 mt-8 text-3xl font-bold;
+}
+
+.markdown-body h2 {
+  @apply mb-3 mt-7 text-2xl font-semibold;
+}
+
+.markdown-body p {
+  @apply my-4 leading-7;
+}
+
+.markdown-body ul {
+  @apply my-4 list-disc pl-6;
+}
+
+.markdown-body code {
+  @apply rounded bg-slate-200 px-1 py-0.5 text-sm dark:bg-slate-800;
+}
+
+.markdown-body pre {
+  @apply overflow-x-auto rounded-xl bg-slate-900 p-4 text-slate-100;
+}
