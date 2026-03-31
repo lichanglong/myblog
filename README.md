@@ -5,6 +5,7 @@
 - 首页文章列表（标题、摘要、发布时间、标签）
 - 文章详情页（读取本地 `.md` 文件并渲染 Markdown）
 - 关于我页面
+- Pixso 设计稿占位落地页（路由 `#/design`，需按稿补充标注或截图后精调）
 - 暗色模式切换（本地持久化）
 - GitHub Pages 部署配置
 
@@ -61,8 +62,13 @@ npm run deploy
 ```
 
 该命令会构建并把 `dist` 发布到 `gh-pages` 分支。
-# Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### 路由说明（GitHub Pages）
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+部署在子路径（如 `https://用户名.github.io/myblog/`）时，使用 **Hash 路由**，避免直接打开子页面出现 404。
+
+- 首页：`https://用户名.github.io/myblog/#/`
+- 设计稿页：`https://用户名.github.io/myblog/#/design`
+- 文章：`https://用户名.github.io/myblog/#/posts/文章-slug`
+
+本地开发：先在项目目录执行 `npm run dev`，再打开 `http://localhost:5173/#/design`（地址栏会带 `#`；若打不开可试 `http://127.0.0.1:5173/#/design`）

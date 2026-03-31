@@ -1,10 +1,10 @@
 ---
 title: Markdown 渲染实践
-excerpt: 使用 markdown-it + gray-matter 渲染本地 markdown 文章。
+excerpt: 使用 markdown-it 解析 frontmatter，渲染本地 Markdown 文章。
 date: 2026-03-20
 tags:
-  - Markdown
-  - gray-matter
+  - 文档
+  - 元数据
 ---
 
 # Markdown 渲染实践
