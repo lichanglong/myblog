@@ -6,33 +6,57 @@ const posts = getPosts()
 </script>
 
 <template>
-  <section>
-    <h1 class="mb-6 text-3xl font-bold sm:text-4xl">最新文章</h1>
+  <section
+    class="mx-auto w-full max-w-[min(42rem,100%)] px-1 text-[#1a1c1b] sm:px-0"
+  >
+    <header class="mb-8 border-b border-[#375749]/12 pb-6">
+      <p
+        class="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#375749]"
+      >
+        博客
+      </p>
+      <h1
+        class="font-serif text-3xl font-bold tracking-tight text-[#1a1c1b] sm:text-[2rem]"
+      >
+        最新文章
+      </h1>
+    </header>
 
-    <div class="grid gap-4 sm:gap-5">
+    <div class="flex flex-col gap-5">
       <article
         v-for="post in posts"
         :key="post.slug"
-        class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+        class="group rounded-2xl border border-[#375749]/12 bg-[#fcfcfa] p-5 shadow-[0_2px_14px_rgba(26,28,27,0.05)] transition duration-200 hover:border-[#375749]/22 hover:shadow-[0_6px_24px_rgba(55,87,73,0.08)] dark:border-slate-700 dark:bg-slate-900/90 dark:shadow-none dark:hover:border-[#375749]/30"
       >
-        <RouterLink :to="`/posts/${post.slug}`" class="group block">
-          <h2 class="text-xl font-semibold group-hover:text-sky-600 dark:group-hover:text-sky-400">
+        <RouterLink :to="`/posts/${post.slug}`" class="block">
+          <h2
+            class="font-serif text-xl font-semibold text-[#1a1c1b] transition-colors group-hover:text-[#375749] dark:text-slate-100 dark:group-hover:text-[#c7ead9]"
+          >
             {{ post.title }}
           </h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">
+          <p
+            class="mt-2 text-sm leading-relaxed text-[#1a1c1b]/65 dark:text-slate-300"
+          >
             {{ post.excerpt }}
           </p>
         </RouterLink>
 
-        <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-400">
-          <time :datetime="post.date">{{ post.date }}</time>
+        <div
+          class="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-[#375749]/8 pt-4 text-xs dark:border-slate-700"
+        >
+          <time
+            class="tabular-nums text-[#1a1c1b]/45 dark:text-slate-400"
+            :datetime="post.date"
+          >
+            {{ post.date }}
+          </time>
           <div class="flex flex-wrap gap-2">
             <span
               v-for="tag in post.tags"
               :key="tag"
-              class="rounded-full bg-slate-100 px-2.5 py-1 dark:bg-slate-800"
+              class="rounded-sm bg-[#c7ead9]/55 px-2 py-0.5 text-[11px] font-medium text-[#375749] dark:bg-[#375749]/25 dark:text-[#c7ead9]"
             >
-              #{{ tag }}
+              {{ tag }}
             </span>
           </div>
         </div>

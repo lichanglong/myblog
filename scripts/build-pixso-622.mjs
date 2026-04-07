@@ -67,7 +67,7 @@ code = code.replace(
 
 code = code.replace(
   '<div class="scroll-container">',
-  '<div class="scroll-container pixso-622-root" :style="pixso622Style">',
+  '<div class="pixso-622-root" :style="pixso622Style">',
 )
 
 const imports = assetMap
@@ -92,17 +92,14 @@ code = code.replace('<script lang="ts" setup></script>', scriptBlock)
 const mobileCss = `
 
 .pixso-622-root {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
     padding-left: env(safe-area-inset-left, 0px);
     padding-right: env(safe-area-inset-right, 0px);
-    max-width: 100%;
     overflow-x: hidden;
-    box-sizing: border-box;
-}
-
-.pixso-622-root.scroll-container {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
     box-sizing: border-box;
 }
 

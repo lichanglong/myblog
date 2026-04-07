@@ -35,11 +35,11 @@ function linkClass(key: (typeof navItems)[number]['key']): string {
 
 <template>
   <nav
-    class="fixed bottom-0 left-0 right-0 z-[100] border-t border-[#375749]/12 bg-[#fcfcfa]/95 shadow-[0_-4px_24px_rgba(26,28,27,0.06)] backdrop-blur-md"
+    class="fixed bottom-0 z-[100] border-t border-[#375749]/12 bg-[#fcfcfa]/95 shadow-[0_-4px_24px_rgba(26,28,27,0.06)] backdrop-blur-md max-md:inset-x-0 md:left-1/2 md:right-auto md:w-[min(390px,100vw)] md:-translate-x-1/2"
     aria-label="页面导航"
   >
     <div
-      class="mx-auto flex max-w-[390px] items-stretch gap-1 px-1.5 sm:max-w-none sm:px-3"
+      class="flex w-full items-stretch gap-1 px-1.5"
       :style="{
         paddingBottom: 'max(0.35rem, env(safe-area-inset-bottom, 0px))',
         paddingTop: '0.5rem',

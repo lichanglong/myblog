@@ -1,5 +1,5 @@
 <template>
-    <div class="scroll-container pixso-622-root" :style="pixso622Style">
+    <div class="pixso-622-root" :style="pixso622Style">
         <div id="2_622" class="frame-2_622">
             <div id="2_623" class="frame-2_623">
                 <div id="2_624" class="frame-2_624">
@@ -1163,14 +1163,9 @@ const pixso622Style = {
 </script>
 
 <style>
-.scroll-container {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-}
+/* 不使用全局 .scroll-container，避免被其他 Pixso 页面里的同名规则覆盖导致内部滚动条 */
 .frame-2_622 {
     width: 390px;
-    height: 6474.4853515625px;
     position: relative;
     flex-shrink: 0;
     display: flex;
@@ -3315,7 +3310,8 @@ const pixso622Style = {
     position: relative;
     flex-shrink: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 32px;
 }
 .frame-2_712 {
@@ -3832,17 +3828,14 @@ const pixso622Style = {
 
 
 .pixso-622-root {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
     padding-left: env(safe-area-inset-left, 0px);
     padding-right: env(safe-area-inset-right, 0px);
-    max-width: 100%;
     overflow-x: hidden;
-    box-sizing: border-box;
-}
-
-.pixso-622-root.scroll-container {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: visible;
     box-sizing: border-box;
 }
 
